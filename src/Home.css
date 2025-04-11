@@ -1,0 +1,179 @@
+/* Import modern, readable fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Apply consistent font family across the site */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
+  line-height: 1.6;
+  background-color: #fafafa;
+}
+
+.homepage-text {
+  margin-top: 0%;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #2C3E50;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.homepage-paragraph {
+  font-size: 1.1rem;
+  color: #5D6D7E;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-container {
+  width: 100%;
+  padding: 3rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Main flexbox layout */
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  max-width: 1200px;
+  margin: 30px auto 0 auto;
+  gap: 3rem; /* Increased space between text and image */
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Increased space between elements */
+  max-width: 500px; /* Limit text width for better readability */
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Add slight rounding to image */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Add subtle shadow */
+}
+
+.cta-button {
+  padding: 12px 24px;
+  background-color: #E67E22; /* Warmer orange */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background-color: #D35400; /* Darker orange on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.homepagetitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E67E22; /* Match the button color for consistency */
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 3rem 0 2rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.homepagetitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #E67E22;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* Make cards stretch to equal height */
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 300px;
+  height: auto; /* Let content determine height */
+  min-height: 380px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  color: #2C3E50;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: #5D6D7E;
+  line-height: 1.6;
+}
+
+/* Make the site responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .homepagetitle {
+    font-size: 2.5rem;
+  }
+  
+  .homepage-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .homepage-paragraph {
+    text-align: center;
+  }
+  
+  .hero-text {
+    align-items: center;
+  }
+}

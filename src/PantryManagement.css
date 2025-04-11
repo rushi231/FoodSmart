@@ -1,0 +1,376 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Base styles */
+.pantry-container {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+.pantry-container h1 {
+  font-family: 'Playfair Display', serif;
+  color: #2C3E50;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pantry-container h2 {
+  font-size: 1.8rem;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+.pantry-container h3 {
+  font-size: 1.4rem;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+/* Expiry notifications */
+.expiry-notification {
+  background-color: #FFECB3;
+  border-left: 4px solid #FFC107;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.expiry-notification h3 {
+  color: #E65100;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.expiry-notification ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.expiry-notification li {
+  margin-bottom: 0.25rem;
+}
+
+/* Form styles */
+.pantry-form-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.pantry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+.quantity-unit {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity-unit select {
+  margin-top: 0.5rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2C3E50;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primary-button, 
+.secondary-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background-color: #E67E22;
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #D35400;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.secondary-button:hover {
+  background-color: #ced4da;
+}
+
+/* Search and filter styles */
+.pantry-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 2;
+  min-width: 250px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-options label {
+  white-space: nowrap;
+}
+
+.filter-options select {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Pantry list styles */
+.pantry-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.pantry-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  background-color: #e9ecef;
+  font-weight: 600;
+  color: #2C3E50;
+}
+
+.sortable {
+  cursor: pointer;
+  position: relative;
+}
+
+.sortable:hover {
+  color: #E67E22;
+}
+
+.sorted-asc::after {
+  content: "↑";
+  margin-left: 0.5rem;
+  color: #E67E22;
+}
+
+.sorted-desc::after {
+  content: "↓";
+  margin-left: 0.5rem;
+  color: #E67E22;
+}
+
+.pantry-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  align-items: center;
+}
+
+.pantry-item:last-child {
+  border-bottom: none;
+}
+
+.pantry-item:hover {
+  background-color: #f8f9fa;
+}
+
+.item-name {
+  font-weight: 500;
+}
+
+.item-category {
+  text-transform: capitalize;
+  color: #6c757d;
+}
+
+.expired {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.expiring-soon {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.expired-text {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+.no-expiry {
+  color: #adb5bd;
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button, 
+.delete-button {
+  padding: 0.4rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.edit-button:hover {
+  background-color: #ced4da;
+}
+
+.delete-button {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.delete-button:hover {
+  background-color: #f5c6cb;
+}
+
+.empty-pantry {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Stats section */
+.pantry-stats {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E67E22;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pantry-header, .pantry-item {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+  
+  .item-actions {
+    grid-column: 1 / -1;
+    margin-top: 0.5rem;
+    justify-content: flex-end;
+  }
+  
+  .pantry-header .item-actions {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .pantry-header, .pantry-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  
+  .item-category, .item-expiry {
+    grid-column: 1 / -1;
+  }
+  
+  .pantry-header .item-category, 
+  .pantry-header .item-expiry {
+    display: none;
+  }
+}
